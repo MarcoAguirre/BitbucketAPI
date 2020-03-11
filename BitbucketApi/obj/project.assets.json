@@ -2801,11 +2801,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HSB-CAD\\Desktop\\BitbucketApi\\BitbucketApi\\BitbucketApi.csproj",
+      "projectUniqueName": "C:\\Users\\HSB-CAD\\Documents\\GitHub\\BitbucketAPI\\BitbucketApi\\BitbucketApi.csproj",
       "projectName": "BitbucketApi",
-      "projectPath": "C:\\Users\\HSB-CAD\\Desktop\\BitbucketApi\\BitbucketApi\\BitbucketApi.csproj",
+      "projectPath": "C:\\Users\\HSB-CAD\\Documents\\GitHub\\BitbucketAPI\\BitbucketApi\\BitbucketApi.csproj",
       "packagesPath": "C:\\Users\\HSB-CAD\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HSB-CAD\\Desktop\\BitbucketApi\\BitbucketApi\\obj\\",
+      "outputPath": "C:\\Users\\HSB-CAD\\Documents\\GitHub\\BitbucketAPI\\BitbucketApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

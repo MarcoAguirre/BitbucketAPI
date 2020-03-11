@@ -22,5 +22,6 @@
                    VerticalAlignment="Center" Margin="0,20,0,0"/>
         <PasswordBox x:Name="pbPassword" Height="20" Width="300" HorizontalAlignment="Center" Grid.Row="1"
                  VerticalAlignment="Bottom" Margin="0,0,0,0"/>
+        <Button x:Name="btnGet" Content="GET" Width="50" Height="20" HorizontalAlignment="Center" Grid.Row="2" Click="btnGet_Click"/>
     </Grid>
 </Window>

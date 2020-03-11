@@ -9,20 +9,26 @@ namespace BitbucketApi
     public partial class MainWindow : Window
     {
         private HttpClient client = new HttpClient();
+
         public MainWindow()
         {
-            InitializeComponent();
-            dynamic response = Get();
-            MessageBox.Show(response.ToString());
+            InitializeComponent();        
         }
 
-        public async Task<dynamic> Get()
+        public async Task<string> Get()
         {
-            HttpResponseMessage responseJson = await client.GetAsync("http://www.etnassoft.com/api/v1/get/?id=589&callback=?");
+            HttpResponseMessage responseJson = await client.GetAsync("http://www.google.com.ec");
             HttpContent content = responseJson.Content;
+            string strContentResponse = await content.ReadAsStringAsync();
 
 
-            return content.ReadAsStringAsync();
+            return strContentResponse;
+        }
+
+        private void btnGet_Click(object sender, RoutedEventArgs e)
+        {
+            var response = Get();
+            MessageBox.Show(Convert.ToString( response));
         }
     }
 }
