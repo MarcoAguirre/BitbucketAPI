@@ -1,0 +1,17 @@
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\bin\Debug\netcoreapp3.1\BitbucketApi.exe
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\bin\Debug\netcoreapp3.1\BitbucketApi.deps.json
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\bin\Debug\netcoreapp3.1\BitbucketApi.runtimeconfig.json
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\bin\Debug\netcoreapp3.1\BitbucketApi.runtimeconfig.dev.json
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\bin\Debug\netcoreapp3.1\BitbucketApi.dll
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\bin\Debug\netcoreapp3.1\BitbucketApi.pdb
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\obj\Debug\netcoreapp3.1\BitbucketApi.csprojAssemblyReference.cache
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\obj\Debug\netcoreapp3.1\BitbucketApi_MarkupCompile.cache
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\obj\Debug\netcoreapp3.1\BitbucketApi_MarkupCompile.lref
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\obj\Debug\netcoreapp3.1\BitbucketApi.g.resources
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\obj\Debug\netcoreapp3.1\BitbucketApi.AssemblyInfoInputs.cache
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\obj\Debug\netcoreapp3.1\BitbucketApi.AssemblyInfo.cs
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\obj\Debug\netcoreapp3.1\BitbucketApi.dll
+C:\Users\HSB-CAD\Desktop\BitbucketApi\BitbucketApi\obj\Debug\netcoreapp3.1\BitbucketApi.pdb
