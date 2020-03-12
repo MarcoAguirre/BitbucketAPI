@@ -6,6 +6,7 @@ using System.Net;
 using System.IO;
 using System.Threading.Tasks;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace BitbucketApi
 {
@@ -47,8 +48,6 @@ namespace BitbucketApi
 
         public async Task<HttpResponseMessage> GETJSONRepositories(string strURL, string strUser, string strPassword)
         {
-            //string strRepoData = "";
-
             HttpRequestMessage httpRequest = new HttpRequestMessage(new HttpMethod("GET"), strURL + strUser);
             string vAuthorization = Convert.ToBase64String(Encoding.ASCII.GetBytes(strUser + ":" + strPassword));
             httpRequest.Headers.TryAddWithoutValidation("Authorization", $"Basic {vAuthorization}");
@@ -58,15 +57,35 @@ namespace BitbucketApi
             return response;
         }
 
+        public string NewGet()
+        {
+            string strRepoData = "";
+            Repository repository;
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(
+                @"https://api.bitbucket.org/2.0/repositories/MarcoVAguirre/react/refs/branches");
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream stream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(stream);
+
+            strRepoData = reader.ReadToEnd();
+            repository = JsonConvert.DeserializeObject<Repository>(strRepoData);
+
+
+            return repository.StrRepositoryName;
+        }
+
         private void btnGet_Click(object sender, RoutedEventArgs e)
         {
             /*var response = Get();
             MessageBox.Show(Convert.ToString( response));*/
 
-            //MessageBox.Show(GETJSON("http://www.google.com.ec"));
+            //MessageBox.Show(GETJSON("https://api.bitbucket.org/2.0/repositories/MarcoVAguirre/react/refs/branches"));
 
-            MessageBox.Show(GETJSONRepositories("https://api.bitbucket.org/2.0/repositories/", txtUserName.Text, 
-                pbPassword.Password).ToString());
+            //MessageBox.Show(GETJSONRepositories("https://api.bitbucket.org/2.0/repositories/", txtUserName.Text, 
+            //  pbPassword.Password).ToString());
+
+            MessageBox.Show(NewGet());
         }
     }
 }
