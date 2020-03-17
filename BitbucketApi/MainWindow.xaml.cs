@@ -16,7 +16,7 @@ namespace BitbucketApi
 
         public MainWindow()
         {
-            InitializeComponent();        
+            InitializeComponent();
         }
 
         public async Task<string> Get()
@@ -46,33 +46,48 @@ namespace BitbucketApi
             return strJSON;
         }
 
+        //Este método está correcto, falta formatear bien el JSON
         public async Task<HttpResponseMessage> GETJSONRepositories(string strURL, string strUser, string strPassword)
         {
+            Stream strContent;
+            string strJSON = "";
+
+            Values values;
+
             HttpRequestMessage httpRequest = new HttpRequestMessage(new HttpMethod("GET"), strURL + strUser);
             string vAuthorization = Convert.ToBase64String(Encoding.ASCII.GetBytes(strUser + ":" + strPassword));
             httpRequest.Headers.TryAddWithoutValidation("Authorization", $"Basic {vAuthorization}");
 
             HttpResponseMessage response = await client.SendAsync(httpRequest);
 
+            
+
+            StreamReader reader = new StreamReader(strContent);
+
+            strJSON = reader.ReadToEnd();
+
+            values = JsonConvert.DeserializeObject<Values>(strJSON);
+
             return response;
         }
 
+        //Este nuevo GET también está correcto, hay que leer bien el JSON
         public string NewGet()
         {
             string strRepoData = "";
-            Repository repository;
+            //Repository repository;
+            //https://api.bitbucket.org/2.0/repositories/MarcoVAguirre/react/refs/branches
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(
-                @"https://api.bitbucket.org/2.0/repositories/MarcoVAguirre/react/refs/branches");
+                @"https://bitbucket.org/MarcoVAguirre/react.git\");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream stream = response.GetResponseStream();
             StreamReader reader = new StreamReader(stream);
 
             strRepoData = reader.ReadToEnd();
-            repository = JsonConvert.DeserializeObject<Repository>(strRepoData);
+            //repository = JsonConvert.DeserializeObject<Repository>(strRepoData);
 
-
-            return repository.StrRepositoryName;
+            return strRepoData;
         }
 
         private void btnGet_Click(object sender, RoutedEventArgs e)
@@ -82,10 +97,10 @@ namespace BitbucketApi
 
             //MessageBox.Show(GETJSON("https://api.bitbucket.org/2.0/repositories/MarcoVAguirre/react/refs/branches"));
 
-            //MessageBox.Show(GETJSONRepositories("https://api.bitbucket.org/2.0/repositories/", txtUserName.Text, 
-            //  pbPassword.Password).ToString());
+            MessageBox.Show(GETJSONRepositories("https://api.bitbucket.org/2.0/repositories/", txtUserName.Text, 
+              pbPassword.Password).ToString());
 
-            MessageBox.Show(NewGet());
+            //MessageBox.Show(NewGet());
         }
     }
 }
