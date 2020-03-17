@@ -53,3 +53,5 @@ C:\Users\vinic\Documents\GitHub\BitbucketAPI\BitbucketApi\obj\Debug\netcoreapp3.
 C:\Users\vinic\Documents\GitHub\BitbucketAPI\BitbucketApi\obj\Debug\netcoreapp3.1\BitbucketApi.csproj.CopyComplete
 C:\Users\vinic\Documents\GitHub\BitbucketAPI\BitbucketApi\obj\Debug\netcoreapp3.1\BitbucketApi.dll
 C:\Users\vinic\Documents\GitHub\BitbucketAPI\BitbucketApi\obj\Debug\netcoreapp3.1\BitbucketApi.pdb
+C:\Users\vinic\Documents\GitHub\BitbucketAPI\BitbucketApi\obj\Debug\netcoreapp3.1\BitbucketApi.csproj.CoreCompileInputs.cache
+C:\Users\vinic\Documents\GitHub\BitbucketAPI\BitbucketApi\obj\Debug\netcoreapp3.1\BitbucketApi.genruntimeconfig.cache
