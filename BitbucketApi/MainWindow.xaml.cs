@@ -14,6 +14,8 @@ namespace BitbucketApi
     {
         private HttpClient client = new HttpClient();
 
+        Dictionary<string, string> dicRepositoriesDataForTheListView = new Dictionary<string, string>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -69,6 +71,24 @@ namespace BitbucketApi
             values = JsonConvert.DeserializeObject<Values>(strJSON);
 
             return response;
+        }
+
+        public void SetRepositoryDataToTheListView(List<Repository> lstRepositoriesGained)
+        {
+            if (lstRepositoriesGained == null) return;
+
+            dicRepositoriesDataForTheListView.Clear();
+
+            foreach (Repository RepoItem in lstRepositoriesGained)
+            {
+                if (RepoItem == null) continue;
+
+                dicRepositoriesDataForTheListView.Add(
+                    RepoItem.m_strRepositoryName, RepoItem.m_strRepositoryCommentary);
+            }
+
+            lvRepositories.ItemsSource = dicRepositoriesDataForTheListView;
+            lvRepositories.Items.Refresh();
         }
 
         //Este nuevo GET también está correcto, hay que leer bien el JSON
