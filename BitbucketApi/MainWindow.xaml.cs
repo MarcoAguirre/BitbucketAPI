@@ -60,7 +60,7 @@ namespace BitbucketApi
 
             HttpResponseMessage response = await client.SendAsync(httpRequest);
 
-            
+            strContent = response.Content.ReadAsStreamAsync().Result;
 
             StreamReader reader = new StreamReader(strContent);
 
