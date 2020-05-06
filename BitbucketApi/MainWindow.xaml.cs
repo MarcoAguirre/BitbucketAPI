@@ -14,7 +14,8 @@ namespace BitbucketApi
     {
         private HttpClient client = new HttpClient();
 
-        Dictionary<string, string> dicRepositoriesDataForTheListView = new Dictionary<string, string>();
+        Dictionary<string, string> dicRepositoriesDataForTheListView = 
+            new Dictionary<string, string>();
 
         public MainWindow()
         {
@@ -49,16 +50,22 @@ namespace BitbucketApi
         }
 
         //Este método está correcto, falta formatear bien el JSON
-        public async Task<HttpResponseMessage> GETJSONRepositories(string strURL, string strUser, string strPassword)
+        public async Task<HttpResponseMessage> GETJSONRepositories(
+            string strURL, string strUser, string strPassword)
         {
             Stream strContent;
             string strJSON = "";
 
             Values values;
 
-            HttpRequestMessage httpRequest = new HttpRequestMessage(new HttpMethod("GET"), strURL + strUser);
-            string vAuthorization = Convert.ToBase64String(Encoding.ASCII.GetBytes(strUser + ":" + strPassword));
-            httpRequest.Headers.TryAddWithoutValidation("Authorization", $"Basic {vAuthorization}");
+            HttpRequestMessage httpRequest = new HttpRequestMessage(
+                new HttpMethod("GET"), strURL + strUser);
+
+            string vAuthorization = Convert.ToBase64String(
+                Encoding.ASCII.GetBytes(strUser + ":" + strPassword));
+
+            httpRequest.Headers.TryAddWithoutValidation(
+                "Authorization", $"Basic {vAuthorization}");
 
             HttpResponseMessage response = await client.SendAsync(httpRequest);
 
@@ -117,7 +124,7 @@ namespace BitbucketApi
 
             //MessageBox.Show(GETJSON("https://api.bitbucket.org/2.0/repositories/MarcoVAguirre/react/refs/branches"));
 
-            MessageBox.Show(GETJSONRepositories("https://api.bitbucket.org/2.0/repositories/", txtUserName.Text, 
+            MessageBox.Show(GETJSONRepositories("Ingresar aqui el html", txtUserName.Text, 
               pbPassword.Password).ToString());
 
             //MessageBox.Show(NewGet());
